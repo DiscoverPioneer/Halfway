@@ -22,7 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        self.title = @"Details";
     }
     return self;
 }
@@ -35,6 +35,7 @@
     self.street1Label.text = self.loc.street1;
     self.regionLabel.text = [self.loc formatRegionString];
     self.descriptionLabel.text = self.loc.description;
+    [self.descriptionLabel sizeToFit];
 }
 - (void)viewWillAppear:(BOOL)animated {
     // 1

@@ -10,7 +10,8 @@
 
 @interface ResultsCell : UITableViewCell
 
-@property (strong, nonatomic) UILabel *name;
-
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *street1Label;
+@property (strong, nonatomic) IBOutlet UILabel *regionLabel;
 
 @end

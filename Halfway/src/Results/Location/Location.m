@@ -25,6 +25,9 @@
         self.state = [address objectForKey:@"state"];
         self.zipCode = [address objectForKey:@"postalcode"];
         
+        //NSDictionary *ancestors = [dictionary objectForKey:@"ancestors"];
+        //self.stateAbbrv = [ancestors objectForKey:@"abbrv"];
+        
         self.latitude = [[dictionary objectForKey:@"latitude"] floatValue];
         self.longitude = [[dictionary objectForKey:@"longitude"] floatValue];
     }
@@ -33,12 +36,7 @@
 
 - (NSString *)formatRegionString
 {
-    //NSString *address = [NSString stringWithFormat:@"%@ %@ , %@ %@",self.street1,self.city,self.state,self.zipCode];
-    //NSString *string = [NSString stringWithFormat:@"Name:\n%@\nLocation:\n%@\n\n%@",self.name,address,self.description];
-    
-    
     return [NSString stringWithFormat:@"%@, %@ %@",self.city,self.state,self.zipCode];
-    
 }
 
 @end

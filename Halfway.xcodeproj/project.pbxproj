@@ -29,6 +29,7 @@
 		FA4F34C318A5EF000091FA76 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */; };
 		FA4F34C818A62A220091FA76 /* ResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34C718A62A220091FA76 /* ResultsCell.m */; };
 		FA4F34CC18A62F770091FA76 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34CB18A62F770091FA76 /* Location.m */; };
+		FA4F34CF18A64A750091FA76 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34CE18A64A750091FA76 /* ResultsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FA4F34C718A62A220091FA76 /* ResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsCell.m; sourceTree = "<group>"; };
 		FA4F34CA18A62F770091FA76 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Location/Location.h; sourceTree = "<group>"; };
 		FA4F34CB18A62F770091FA76 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Location/Location.m; sourceTree = "<group>"; };
+		FA4F34CE18A64A750091FA76 /* ResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			children = (
 				FA4F34C618A62A220091FA76 /* ResultsCell.h */,
 				FA4F34C718A62A220091FA76 /* ResultsCell.m */,
+				FA4F34CE18A64A750091FA76 /* ResultsCell.xib */,
 				FA4F34B918A5EF000091FA76 /* ResultsViewController.h */,
 				FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */,
 				FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */,
@@ -306,6 +309,7 @@
 				09681A0B18A6221D00240950 /* DetailViewController.xib in Resources */,
 				FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */,
 				FA4F34C318A5EF000091FA76 /* ResultsViewController.xib in Resources */,
+				FA4F34CF18A64A750091FA76 /* ResultsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

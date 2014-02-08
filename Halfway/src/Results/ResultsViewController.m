@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "DetailViewController.h"
 #import "Location.h"
+#import "ResultsCell.h"
 
 @interface ResultsViewController ()
 
@@ -124,18 +125,35 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    static NSString *resultsCellIdentifier = @"ResultsCellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    ResultsCell *cell = [tableView dequeueReusableCellWithIdentifier:resultsCellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        //cell = [[ResultsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:resultsCellIdentifier];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ResultsCell" owner:nil options:nil];
+        
+        for(id currentObject in topLevelObjects)
+        {
+            if([currentObject isKindOfClass:[ResultsCell class]])
+            {
+                cell = (ResultsCell *)currentObject;
+                break;
+            }
+        }
     }
     
     Location *loc = [self.resultsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = loc.name;
+    cell.nameLabel.text = loc.name;
+    cell.street1Label.text = loc.street1;
+    cell.regionLabel.text = [loc formatRegionString];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 85;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

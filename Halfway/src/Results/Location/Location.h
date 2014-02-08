@@ -12,10 +12,12 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *description;
+
 @property (strong, nonatomic) NSString *street1;
 @property (strong, nonatomic) NSString *street2;
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *state;
+@property (strong, nonatomic) NSString *stateAbbrv;
 @property (strong, nonatomic) NSString *zipCode;
 
 @property (nonatomic) float latitude;
