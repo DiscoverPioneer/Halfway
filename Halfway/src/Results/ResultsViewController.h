@@ -15,4 +15,6 @@
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) NSArray *resultsArray;
 
+@property (strong, nonatomic) UISegmentedControl *displayOption;
+
 @end
