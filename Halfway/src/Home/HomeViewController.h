@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController{
+    NSMutableData *responseData;
+
+}
 
 - (IBAction)didExecuteSearch:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 
-- (IBAction)bypass:(id)sender;
 @end
