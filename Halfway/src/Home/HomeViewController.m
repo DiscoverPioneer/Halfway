@@ -7,6 +7,7 @@
 //  
 
 #import "HomeViewController.h"
+#import "ResultsViewController.h"
 
 @interface HomeViewController ()
 
@@ -19,7 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        self.title = @"Halfway";
         
     }
     return self;
@@ -37,4 +38,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)didExecuteSearch:(UIButton *)sender
+{
+    ResultsViewController *rvc = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+    [self.navigationController pushViewController:rvc animated:YES];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

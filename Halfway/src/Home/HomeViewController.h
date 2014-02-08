@@ -10,4 +10,6 @@
 
 @interface HomeViewController : UIViewController
 
+- (IBAction)didExecuteSearch:(UIButton *)sender;
+
 @end
