@@ -161,7 +161,10 @@
 }
 
 
-
+- (BOOL)textFielsShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 - (IBAction)radiusAction:(id)sender {
     
 }
