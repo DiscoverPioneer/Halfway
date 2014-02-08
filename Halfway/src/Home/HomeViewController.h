@@ -10,4 +10,5 @@
 
 @interface HomeViewController : UIViewController
 
+- (IBAction)bypass:(id)sender;
 @end

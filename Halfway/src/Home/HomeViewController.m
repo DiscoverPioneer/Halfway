@@ -7,7 +7,7 @@
 //  
 
 #import "HomeViewController.h"
-
+#import "TestViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -37,4 +37,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)bypass:(id)sender {
+    TestViewController *TVC =[[TestViewController alloc]init];
+    [self presentViewController:TVC animated:YES completion:nil];
+}
 @end

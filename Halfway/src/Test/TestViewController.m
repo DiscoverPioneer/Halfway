@@ -32,7 +32,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //[self test:@"http://api.yelp.com/v2/search?term=food&location=San+Francisco"];
     //NSURL *myURL = [NSURL URLWithString:@"http://api.tripadvisor.com/api/partner/1.0/location/28942/geos?key=92C34F58BB4F4E03894F5D171B79857E"];
     NSURL *myURL = [NSURL URLWithString:@"http://api.tripadvisor.com/api/partner/1.0/map/30.26532,-97.73852/restaurants?key=92C34F58BB4F4E03894F5D171B79857E&limit=10"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
@@ -62,7 +61,8 @@
     NSLog(@"Succeeded! Received %d bytes of data",[responseData
                                                    length]);
     NSString *txt = [[NSString alloc] initWithData:responseData encoding: NSASCIIStringEncoding];
-    NSLog(@"%@",txt);
+    //NSArray *array = [NSArray alloc]initWith
+    NSLog(@"%@",array);
 }
 
 
