@@ -17,5 +17,9 @@
 
 - (IBAction)didExecuteSearch:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
+@property (strong, nonatomic) IBOutlet UITextField *startAddress;
+@property (strong, nonatomic) IBOutlet UITextField *friendAddress;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *radiusOutlet;
+- (IBAction)radiusAction:(id)sender;
 
 @end
