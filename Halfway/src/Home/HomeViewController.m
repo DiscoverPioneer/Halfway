@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "ResultsViewController.h"
 #import "Location.h"
+#import "AdvanceHomeViewController.h"
 
 @interface HomeViewController (){
     NSString *lat1;
@@ -58,7 +59,7 @@
 - (IBAction)didExecuteSearch:(UIButton *)sender
 {
     
-    if(![self.startAddress.text isEqualToString:@""] && ![self.friendAddress.text isEqualToString:@""]){
+    if(![self.startAddress.text isEqualToString:@""]&&![self.startAddress.text isEqualToString:@"Enter a city or address"] && ![self.friendAddress.text isEqualToString:@""]&& ![self.friendAddress.text isEqualToString:@"Enter a city or address"]){
     //Make API Call
     //Show Activity Indicator
         [self geocodeRequest];
@@ -170,6 +171,11 @@
 }
 - (IBAction)radiusAction:(id)sender {
     
+}
+
+- (IBAction)advanceSearchAction:(id)sender {
+    AdvanceHomeViewController *AVC = [[AdvanceHomeViewController alloc]init];
+    [self.navigationController pushViewController:AVC animated:YES];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
