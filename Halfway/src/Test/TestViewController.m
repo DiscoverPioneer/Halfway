@@ -62,7 +62,7 @@
                                                    length]);
     NSString *txt = [[NSString alloc] initWithData:responseData encoding: NSASCIIStringEncoding];
     //NSArray *array = [NSArray alloc]initWith
-    NSLog(@"%@",array);
+    //NSLog(@"%@",array);
 }
 
 
