@@ -22,10 +22,7 @@
         // Custom initialization
         
         // Create Nav Bar Segmented Control
-        UISegmentedControl *displayOption = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"List", @"Map", nil]];
-        [displayOption setSelectedSegmentIndex:0];
-        [displayOption sizeToFit];
-        self.navigationItem.titleView = displayOption;
+        self.displayOption = [self makeSegmentedControl];
         
         // Create and Display TableView
         self.tableView = [self makeTableView];
@@ -33,7 +30,6 @@
         
         // Create MapView
         self.mapView = [self makeMapView];
-
     }
     return self;
 }
@@ -50,30 +46,49 @@
     // Dispose of any resources that can be recreated.
 }
 
-# pragma mark Custom Methods
+# pragma mark SegmentedControl
 
-- (void)switchToDisplayMode:(NSInteger)selectedSegment
+- (UISegmentedControl *)makeSegmentedControl
+{
+    UISegmentedControl *displayOption = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"List", @"Map", nil]];
+    [displayOption setSelectedSegmentIndex:0];
+    [displayOption sizeToFit];
+    self.navigationItem.titleView = displayOption;
+    [displayOption addTarget:self
+                      action:@selector(switchToDisplayMode)
+            forControlEvents:UIControlEventValueChanged];
+    
+    return displayOption;
+}
+
+- (void)switchToDisplayMode
 {
     // Method to switch to the selected segments interpreted display mode.
     
     // Clear subviews
-    for (UIView *subView in self.view.subviews)
-        [subView removeFromSuperview];
+    //for (UIView *subView in self.view.subviews)
+      //  [subView removeFromSuperview];
     
     // Set desired view
-    if (selectedSegment == 0)
+    if ([self.displayOption selectedSegmentIndex] == 1)
     {
         // Currently displaying TableView
         // Switch to Map View
+        [self.tableView removeFromSuperview];
         [self.view addSubview:self.mapView];
+        NSLog(@"Switch to Map");
     }
     else
     {
         // Currently displaying Map View
         // Switch to TableView
+        [self.mapView removeFromSuperview];
         [self.view addSubview:self.tableView];
+        NSLog(@"Switch to Table");
     }
 }
+
+
 
 # pragma mark Table View
 
