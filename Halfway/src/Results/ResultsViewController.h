@@ -11,4 +11,6 @@
 @interface ResultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *resultsArray;
+
 @end

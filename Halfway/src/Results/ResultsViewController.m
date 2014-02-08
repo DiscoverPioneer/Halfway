@@ -19,7 +19,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title=@"Results";
+        //self.title=@"Results";
+        UISegmentedControl *displayOption = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"List", @"Map", nil]];
+        [displayOption setSelectedSegmentIndex:0];
+        [displayOption sizeToFit];
+        self.navigationItem.titleView = displayOption;
     }
     return self;
 }
