@@ -1,26 +1,24 @@
 //
-//  HomeViewController.m
+//  ResultsViewController.m
 //  Halfway
 //
-//  Created by Phil Scarfi on 2/7/14.
+//  Created by Alex Koshy on 2/7/14.
 //  Copyright (c) 2014 Pioneer Mobile Applications. All rights reserved.
-//  
+//
 
-#import "HomeViewController.h"
+#import "ResultsViewController.h"
 
-@interface HomeViewController ()
+@interface ResultsViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation ResultsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
-        
     }
     return self;
 }
