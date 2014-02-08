@@ -8,7 +8,8 @@
 
 #import "DetailViewController.h"
 #import "Location.h"
- 
+#import "DetailInfoView.h"
+
 #define METERS_PER_MILE 1609.344
 
 @interface DetailViewController ()
@@ -23,6 +24,7 @@
     if (self) {
         // Custom initialization
         self.title = @"Details";
+        self.infoView = [[DetailInfoView alloc] init];
     }
     return self;
 }
@@ -31,11 +33,30 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.nameLabel.text = self.loc.name;
-    self.street1Label.text = self.loc.street1;
-    self.regionLabel.text = [self.loc formatRegionString];
-    self.descriptionLabel.text = self.loc.description;
-    [self.descriptionLabel sizeToFit];
+    self.infoView.nameLabel.text = self.loc.name;
+    self.infoView.street1Label.text = self.loc.street1;
+    self.infoView.regionLabel.text = [self.loc formatRegionString];
+    self.infoView.descriptionLabel.text = self.loc.description;
+    [self.infoView.descriptionLabel sizeToFit];
+    
+    // Initialize Scroll View
+    NSArray *colors = [NSArray arrayWithObjects:[UIColor redColor], [UIColor greenColor], [UIColor blueColor], nil];
+    for (int i = 0; i < colors.count; i++) {
+        CGRect frame;
+        frame.origin.x = self.scrollView.frame.size.width * i;
+        frame.origin.y = 0;
+        frame.size = self.scrollView.frame.size;
+        
+        UIView *subview = [[UIView alloc] initWithFrame:frame];
+        subview.backgroundColor = [colors objectAtIndex:i];
+        [self.scrollView addSubview:subview];
+    }
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * colors.count, self.scrollView.frame.size.height);
+    
+    //self.infoView = [[[NSBundle mainBundle] loadNibNamed:@"DetailInfoView" owner:self options:nil] objectAtIndex:0];
+    [self.scrollView addSubview:self.infoView];
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     // 1
@@ -56,11 +77,44 @@
     MKPointAnnotation *newAnnotation =[[MKPointAnnotation alloc]init];
     newAnnotation.title = self.loc.name;
     newAnnotation.coordinate = location;
-	[self.mapView addAnnotation:newAnnotation];}
+	[self.mapView addAnnotation:newAnnotation];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UIScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    // Update the page when more than 50% of the previous/next page is visible
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+}
+
+- (IBAction)changePage:(UIPageControl *)sender
+{
+    // update the scroll view to the appropriate page
+    CGRect frame;
+    frame.origin.x = self.scrollView.frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.scrollView.frame.size;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+

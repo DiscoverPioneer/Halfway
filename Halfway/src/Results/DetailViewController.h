@@ -11,15 +11,19 @@
 #import <MapKit/MapKit.h>
 
 @class Location;
+@class DetailInfoView;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UIScrollViewDelegate>
+
+@property (strong, nonatomic) NSArray *resultsArray;
 
 @property (strong, nonatomic) Location *loc;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *street1Label;
-@property (strong, nonatomic) IBOutlet UILabel *regionLabel;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) DetailInfoView *infoView;
 
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
+
+- (IBAction)changePage:(UIPageControl *)sender;
 
 @end

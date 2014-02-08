@@ -34,6 +34,8 @@
 		FA4F34C818A62A220091FA76 /* ResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34C718A62A220091FA76 /* ResultsCell.m */; };
 		FA4F34CC18A62F770091FA76 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34CB18A62F770091FA76 /* Location.m */; };
 		FA4F34CF18A64A750091FA76 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34CE18A64A750091FA76 /* ResultsCell.xib */; };
+		FA4F34D118A6928A0091FA76 /* DetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34D018A6928A0091FA76 /* DetailInfoView.xib */; };
+		FA4F34D518A695B60091FA76 /* DetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34D418A695B60091FA76 /* DetailInfoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,9 @@
 		FA4F34CA18A62F770091FA76 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Location/Location.h; sourceTree = "<group>"; };
 		FA4F34CB18A62F770091FA76 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Location/Location.m; sourceTree = "<group>"; };
 		FA4F34CE18A64A750091FA76 /* ResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
+		FA4F34D018A6928A0091FA76 /* DetailInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailInfoView.xib; path = Details/DetailInfoView.xib; sourceTree = "<group>"; };
+		FA4F34D318A695B60091FA76 /* DetailInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailInfoView.h; path = Details/DetailInfo/DetailInfoView.h; sourceTree = "<group>"; };
+		FA4F34D418A695B60091FA76 /* DetailInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailInfoView.m; path = Details/DetailInfo/DetailInfoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +244,19 @@
 				09681A0718A6221D00240950 /* DetailViewController.h */,
 				09681A0818A6221D00240950 /* DetailViewController.m */,
 				09681A0918A6221D00240950 /* DetailViewController.xib */,
+				FA4F34D218A695860091FA76 /* DetailInfo */,
 			);
 			name = Details;
+			sourceTree = "<group>";
+		};
+		FA4F34D218A695860091FA76 /* DetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F34D318A695B60091FA76 /* DetailInfoView.h */,
+				FA4F34D418A695B60091FA76 /* DetailInfoView.m */,
+				FA4F34D018A6928A0091FA76 /* DetailInfoView.xib */,
+			);
+			name = DetailInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4F34D118A6928A0091FA76 /* DetailInfoView.xib in Resources */,
 				0968191718A5CE5C00240950 /* InfoPlist.strings in Resources */,
 				0968191F18A5CE5C00240950 /* Images.xcassets in Resources */,
 				09681A0F18A684AB00240950 /* Road.jpg in Resources */,
@@ -351,6 +368,7 @@
 				0968191D18A5CE5C00240950 /* AppDelegate.m in Sources */,
 				0968191918A5CE5C00240950 /* main.m in Sources */,
 				FA4F34C818A62A220091FA76 /* ResultsCell.m in Sources */,
+				FA4F34D518A695B60091FA76 /* DetailInfoView.m in Sources */,
 				FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */,
 				FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */,
 			);
