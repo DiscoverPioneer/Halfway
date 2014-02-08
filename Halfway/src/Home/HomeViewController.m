@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "ResultsViewController.h"
+#import "Location.h"
 
 @interface HomeViewController (){
     NSString *lat1;
@@ -25,7 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Halfway";
+        self.title = @"HotSpot";
         
     }
     return self;
@@ -144,14 +145,9 @@
                           options:kNilOptions
                           error:&error];
     
-    NSArray *results = [json objectForKey:@"data"];
-    for (NSDictionary *dict in results) {
-        NSLog(@"Name= %@",[dict objectForKey:@"name"]);
-    }
-    
     //Go to results page
     ResultsViewController *rvc = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
-    [rvc setResultsArray:results];
+    [rvc setResultsArray:[self makeResultsArrayFromData:[json objectForKey:@"data"]]];
     [self.navigationController pushViewController:rvc animated:YES];
 }
 - (void)didReceiveMemoryWarning
@@ -173,6 +169,17 @@
 {
     [textField resignFirstResponder];
     return NO;
+}
+
+- (NSArray *)makeResultsArrayFromData:(NSArray *)data
+{
+    NSMutableArray *locations = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in data) {
+        Location *loc = [[Location alloc] initWithDictionary:dict];
+        [locations addObject:loc];
+    }
+    
+    return locations;
 }
 
 @end

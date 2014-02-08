@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Location.h"
  
 #define METERS_PER_MILE 1609.344
 
@@ -30,13 +31,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.textView.text=self.detailString;
+    self.nameLabel.text = self.loc.name;
+    self.street1Label.text = self.loc.street1;
+    self.regionLabel.text = [self.loc formatRegionString];
+    self.descriptionLabel.text = self.loc.description;
 }
 - (void)viewWillAppear:(BOOL)animated {
     // 1
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = self.lat;
-    zoomLocation.longitude= self.lon;
+    zoomLocation.latitude = self.loc.latitude;
+    zoomLocation.longitude= self.loc.longitude;
     
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
@@ -45,12 +49,12 @@
     [_mapView setRegion:viewRegion animated:YES];
     
     CLLocationCoordinate2D location;
-    location.latitude = _lat;
-	location.longitude = _lon;
+    location.latitude = self.loc.latitude;
+	location.longitude = self.loc.longitude;
     // Add the annotation to our map view
     MKPointAnnotation *newAnnotation =[[MKPointAnnotation alloc]init];
     newAnnotation.title = self.title;
-    newAnnotation.coordinate=location;
+    newAnnotation.coordinate = location;
 	[self.mapView addAnnotation:newAnnotation];}
 - (void)didReceiveMemoryWarning
 {

@@ -10,4 +10,7 @@
 
 @interface ResultsCell : UITableViewCell
 
+@property (strong, nonatomic) UILabel *name;
+
+
 @end

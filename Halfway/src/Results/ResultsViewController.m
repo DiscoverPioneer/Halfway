@@ -9,6 +9,7 @@
 #import "ResultsViewController.h"
 #import <MapKit/MapKit.h>
 #import "DetailViewController.h"
+#import "Location.h"
 
 @interface ResultsViewController ()
 
@@ -131,8 +132,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    NSDictionary *dict = [self.resultsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dict objectForKey:@"name"];
+    Location *loc = [self.resultsArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = loc.name;
     
     return cell;
 }
@@ -141,15 +142,9 @@
 {
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     DetailViewController *DVC = [[DetailViewController alloc]init];
-    NSDictionary *dict = [self.resultsArray objectAtIndex:indexPath.row];
-    //NSString *string = [NSString stringWithFormat:@"Name:\n%@\nLocation:\n%@",[dict objectForKey:@"name"],[dict objectForKey:@"location"]];
-    [DVC setDetailString:[self makeString:dict]];
-    [DVC setTitle:[dict objectForKey:@"name"]];
-    [DVC setLat:[[dict objectForKey:@"latitude"]floatValue]];
-    [DVC setLon:[[dict objectForKey:@"longitude"]floatValue]];
-
+    DVC.loc = [self.resultsArray objectAtIndex:indexPath.row];
+    
     [self.navigationController pushViewController:DVC animated:YES];
-
 }
 
 # pragma mark Map View
@@ -157,20 +152,6 @@
 -(MKMapView *)makeMapView
 {
     return [[MKMapView alloc] initWithFrame:self.view.frame];
-}
-
--(NSString *)makeString: (NSDictionary*)dict{
-    NSString *name =[dict objectForKey:@"name"];
-    NSDictionary *address_obj = [dict objectForKey:@"address_obj"];
-    NSString *address = [NSString stringWithFormat:@"%@ %@ , %@ %@",[address_obj objectForKey:@"street1"],[address_obj objectForKey:@"city"],[address_obj objectForKey:@"state"],[address_obj objectForKey:@"postalcode"]];
-    NSString *description =[dict objectForKey:@"description"];
-
-    
-    
-    NSString *string = [NSString stringWithFormat:@"Name:\n%@\nLocation:\n%@\n\n%@",name,address,description];
-    
-    return string;
-    
 }
 
 @end

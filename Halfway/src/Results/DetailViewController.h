@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+
+@class Location;
+
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextView *textView;
-@property NSString *detailString;
+@property (strong, nonatomic) Location *loc;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property float lat;
-@property float lon;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *street1Label;
+@property (strong, nonatomic) IBOutlet UILabel *regionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+
 @end
