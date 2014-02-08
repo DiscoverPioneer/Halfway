@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultsViewController : UIViewController
+@interface ResultsViewController : UIViewController{
+    
+}
+@property (strong,nonatomic) NSArray *resultsArray;
 
 @end
