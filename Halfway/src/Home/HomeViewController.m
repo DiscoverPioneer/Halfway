@@ -9,7 +9,12 @@
 #import "HomeViewController.h"
 #import "ResultsViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController (){
+    NSString *lat1;
+    NSString *lon1;
+    NSString *lat2;
+    NSString *lon2;
+}
 
 @end
 
@@ -37,28 +42,77 @@
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
     locationManager.desiredAccuracy = kCLLocationAccuracyBest; // Best
     [locationManager startUpdatingLocation];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray *placemarks, NSError *error){
+        if(placemarks.count){
+            NSDictionary *dictionary = [[placemarks objectAtIndex:0] addressDictionary];
+            NSString *string=[NSString stringWithFormat:@"%@ %@, %@ %@ ",[dictionary valueForKey:@"Street"],[dictionary valueForKey:@"City"],[dictionary valueForKey:@"State"],[dictionary valueForKey:@"ZIP"]];
+            self.startAddress.text =string;
+            NSLog(@"HERE:%@",string);
+        }
+        
+    }];
+    
 }
-
 - (IBAction)didExecuteSearch:(UIButton *)sender
 {
     
+    if(![self.startAddress.text isEqualToString:@""] && ![self.friendAddress.text isEqualToString:@""]){
     //Make API Call
     //Show Activity Indicator
-
-    NSString *lat = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude];
-    NSString *lon = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude];
-    NSString *urlString = [NSString stringWithFormat:@"http://api.tripadvisor.com/api/partner/1.0/map/%@,%@/restaurants?key=92C34F58BB4F4E03894F5D171B79857E&limit=10",lat,lon];
+        [self geocodeRequest];
+    }
+    //Make sure all fields are filled in!!
+    else{
+        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Whoops" message:@"Make Sure you fill in all the fields" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+    
+}
+-(void)geocodeRequest{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:self.startAddress.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        if([placemarks count]){
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            lat1 = [NSString stringWithFormat:@"%f",placemark.location.coordinate.latitude];
+            lon1 = [NSString stringWithFormat:@"%f",placemark.location.coordinate.longitude];
+            [geocoder geocodeAddressString:self.friendAddress.text completionHandler:^(NSArray *placemarks, NSError *error) {
+                //Do Something
+                if([placemarks count]){
+                    CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                    lat2 = [NSString stringWithFormat:@"%f",placemark.location.coordinate.latitude];
+                    lon2 = [NSString stringWithFormat:@"%f",placemark.location.coordinate.longitude];
+                    //Were good to go
+                    [self makeRequest];
+                }
+                else{
+                    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Whoops" message:@"Check the other person's address. Try to include street, city, state, & zip code." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                    [alert show];
+                }
+            }];
+        }
+        else{
+            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Whoops" message:@"Check your address. Try to include street, city, state, & zip code." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];//Out
+}
+-(void)makeRequest{
+    float lat1float = [lat1 floatValue];
+    float lon1float = [lon1 floatValue];
+    float lat2float = [lat2 floatValue];
+    float lon2float = [lon2 floatValue];
+    //Calculate midpoint coordinate
+    float midlat = (lat1float + lat2float)/2;
+    float midlon = (lon1float + lon2float)/2;
+    NSString *urlString = [NSString stringWithFormat:@"http://api.tripadvisor.com/api/partner/1.0/map/%f,%f/restaurants?key=92C34F58BB4F4E03894F5D171B79857E&limit=10",midlat,midlon];
     NSURL *myURL = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
-    
     NSURLConnection *connection;
     connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
     [self.activity startAnimating];
     self.view.userInteractionEnabled=NO;
-    
 }
-
-
 #pragma mark CONNECTION DELEGATE
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
@@ -85,7 +139,7 @@
     [self.activity stopAnimating];
     NSError* error;
     NSDictionary* json = [NSJSONSerialization
-                          JSONObjectWithData:responseData //1
+                          JSONObjectWithData:responseData
                           
                           options:kNilOptions
                           error:&error];
@@ -108,6 +162,8 @@
 
 
 
+- (IBAction)radiusAction:(id)sender {
+}
 @end
 
 
