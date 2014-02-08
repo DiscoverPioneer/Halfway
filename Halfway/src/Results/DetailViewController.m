@@ -75,7 +75,7 @@
 	location.longitude = self.loc.longitude;
     // Add the annotation to our map view
     MKPointAnnotation *newAnnotation =[[MKPointAnnotation alloc]init];
-    newAnnotation.title = self.title;
+    newAnnotation.title = self.loc.name;
     newAnnotation.coordinate = location;
 	[self.mapView addAnnotation:newAnnotation];
 }

@@ -21,5 +21,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *friendAddress;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *radiusOutlet;
 - (IBAction)radiusAction:(id)sender;
+- (IBAction)advanceSearchAction:(id)sender;
 
 @end

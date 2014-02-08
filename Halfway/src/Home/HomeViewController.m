@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "ResultsViewController.h"
 #import "Location.h"
+#import "AdvanceHomeViewController.h"
 
 @interface HomeViewController (){
     NSString *lat1;
@@ -58,7 +59,7 @@
 - (IBAction)didExecuteSearch:(UIButton *)sender
 {
     
-    if(![self.startAddress.text isEqualToString:@""] && ![self.friendAddress.text isEqualToString:@""]){
+    if(![self.startAddress.text isEqualToString:@""]&&![self.startAddress.text isEqualToString:@"Enter a city or address"] && ![self.friendAddress.text isEqualToString:@""]&& ![self.friendAddress.text isEqualToString:@"Enter a city or address"]){
     //Make API Call
     //Show Activity Indicator
         [self geocodeRequest];
@@ -148,6 +149,13 @@
     //Go to results page
     ResultsViewController *rvc = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
     [rvc setResultsArray:[self makeResultsArrayFromData:[json objectForKey:@"data"]]];
+    rvc.lat1 = [lat1 floatValue];
+    rvc.lon1 = [lon1 floatValue];
+    rvc.lat2 = [lat2 floatValue];
+    rvc.lon2 = [lon2 floatValue];
+    
+    rvc.midlat =(rvc.lat1 + rvc.lat2)/2;
+    rvc.midlon = (rvc.lon1 + rvc.lon1)/2;
     [self.navigationController pushViewController:rvc animated:YES];
 }
 - (void)didReceiveMemoryWarning
@@ -163,6 +171,11 @@
 }
 - (IBAction)radiusAction:(id)sender {
     
+}
+
+- (IBAction)advanceSearchAction:(id)sender {
+    AdvanceHomeViewController *AVC = [[AdvanceHomeViewController alloc]init];
+    [self.navigationController pushViewController:AVC animated:YES];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField

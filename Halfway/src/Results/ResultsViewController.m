@@ -33,6 +33,7 @@
         
         // Create MapView
         self.mapView = [self makeMapView];
+        
     }
     return self;
 }
@@ -42,7 +43,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    [self.mapView setDelegate:self];
+    [self populateMap];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -172,7 +176,101 @@
 {
     return [[MKMapView alloc] initWithFrame:self.view.frame];
 }
+#define METERS_PER_MILE 1609.344
+-(void)populateMap{
+    
+    
+    
+    
+    CLLocationCoordinate2D location1;
+    location1.latitude = self.lat1;
+    location1.longitude = self.lon1;
+    MKPointAnnotation *newAnnotation =[[MKPointAnnotation alloc]init];
+    newAnnotation.title = @"My Point";
+    newAnnotation.coordinate = location1;
+    [self.mapView addAnnotation:newAnnotation];
+    //Other users Point
+    CLLocationCoordinate2D location2;
+    location2.latitude = self.lat2;
+    location2.longitude = self.lon2;
+    MKPointAnnotation *newAnnotation2 =[[MKPointAnnotation alloc]init];
+    newAnnotation2.title = @"Other's Point";
+    newAnnotation2.coordinate = location2;
+    
+    [self.mapView addAnnotation:newAnnotation2];
 
+    
+    for (Location *place in self.resultsArray) {
+        
+        CLLocationCoordinate2D location;
+        location.latitude = place.latitude;
+        location.longitude = place.longitude;
+        // Add the annotation to our map view
+        MKPointAnnotation *newAnnotation =[[MKPointAnnotation alloc]init];
+        newAnnotation.title = place.name;
+        newAnnotation.coordinate = location;
+        [self.mapView addAnnotation:newAnnotation];
+    }
+    
+    // 1
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = (_lat1 + _lat2)/2;
+    zoomLocation.longitude= (_lon1 + _lon2)/2;
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 15*METERS_PER_MILE, 15*METERS_PER_MILE);
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
+    
+}
+- (MKAnnotationView *)mapView:(MKMapView *)mapViewObj viewForAnnotation:(id <MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    
+        // try to dequeue an existing pin view first
+        static NSString* AnnotationIdentifier = @"PinIdentifier";
+        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+        [self.mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+        if (!pinView)
+        {
+            // if an existing pin view was not available, create one
+            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
+                                                   initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+            if ([[pinView.annotation title] isEqualToString:@"My Point"] || [[pinView.annotation title] isEqualToString:@"Other's Point"] ) {
+                customPinView.pinColor = MKPinAnnotationColorGreen;
+            }
+            else{
+                customPinView.pinColor = MKPinAnnotationColorPurple;
+
+            }
+            customPinView.animatesDrop = YES;
+            customPinView.canShowCallout = YES;
+            
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            //[rightButton setTitle:[annotationPoint reference] forState:UIControlStateNormal];
+            [rightButton addTarget:self
+                            action:@selector(showDetailPage)
+                  forControlEvents:UIControlEventTouchUpInside];
+            customPinView.rightCalloutAccessoryView = rightButton;
+            return customPinView;
+        }
+        else
+        {
+            pinView.annotation = annotation;
+            if ([[pinView.annotation title] isEqualToString:@"My Point"] || [[pinView.annotation title] isEqualToString:@"Other's Point"] ) {
+                pinView.pinColor = MKPinAnnotationColorGreen;
+            }
+            else{
+                pinView.pinColor = MKPinAnnotationColorPurple;
+                
+            }
+        }
+        return pinView;
+    
+}
+-(void)showDetailPage{
+    //Show detail page for annotation
+}
 @end
 
 
