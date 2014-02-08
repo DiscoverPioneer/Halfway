@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController : UIViewController{
     NSMutableData *responseData;
+    CLLocationManager *locationManager;
 
 }
 
