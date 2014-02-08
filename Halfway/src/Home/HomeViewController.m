@@ -19,7 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        self.title = @"Halfway";
         
     }
     return self;
@@ -42,3 +42,20 @@
     [self presentViewController:TVC animated:YES completion:nil];
 }
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
