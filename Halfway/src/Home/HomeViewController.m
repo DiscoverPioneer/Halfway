@@ -41,7 +41,7 @@
 
 - (IBAction)bypass:(id)sender {
     TestViewController *TVC =[[TestViewController alloc]init];
-    [self presentViewController:TVC animated:YES completion:nil];
+    [self.navigationController pushViewController:TVC animated:YES];
 }
 - (IBAction)didExecuteSearch:(UIButton *)sender
 {
