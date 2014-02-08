@@ -77,7 +77,7 @@
     {
         // Currently displaying TableView
         // Switch to Map View
-        NSLog(@"Switch to Map");
+        //NSLog(@"Switch to Map");
         [self.tableView removeFromSuperview];
         [self.view addSubview:self.mapView];
     }
@@ -85,7 +85,7 @@
     {
         // Currently displaying Map View
         // Switch to TableView
-        NSLog(@"Switch to Table");
+        //NSLog(@"Switch to Table");
         [self.mapView removeFromSuperview];
         [self.view addSubview:self.tableView];
     }
@@ -164,8 +164,15 @@
 {
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     DetailViewController *DVC = [[DetailViewController alloc]init];
-    DVC.loc = [self.resultsArray objectAtIndex:indexPath.row];
+    
     DVC.resultsArray = self.resultsArray;
+    if (indexPath.row > 0) // A left exists
+        DVC.leftLoc = [self.resultsArray objectAtIndex:indexPath.row-1];
+    DVC.currentLoc = [self.resultsArray objectAtIndex:indexPath.row];
+    if (indexPath.row < self.resultsArray.count) // A right exists
+        DVC.rightLoc = [self.resultsArray objectAtIndex:indexPath.row+1];
+    
+    DVC.selectedIndex = indexPath.row;
     
     [self.navigationController pushViewController:DVC animated:YES];
 }

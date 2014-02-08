@@ -7,6 +7,7 @@
 //
 
 #import "DetailInfoView.h"
+#import "Location.h"
 
 @implementation DetailInfoView
 
@@ -20,4 +21,28 @@
     return self;
 }
 
+- (void) setLocation:(Location *)loc
+{
+    self.loc = loc;
+    self.nameLabel.text = self.loc.name;
+    self.street1Label.text = self.loc.street1;
+    self.regionLabel.text = [self.loc formatRegionString];
+    self.descriptionLabel.text = self.loc.description;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,8 +16,16 @@
 @interface DetailViewController : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSArray *resultsArray;
+@property (assign, nonatomic) NSInteger selectedIndex;
 
-@property (strong, nonatomic) Location *loc;
+@property (strong, nonatomic) Location *leftLoc;
+@property (strong, nonatomic) Location *currentLoc;
+@property (strong, nonatomic) Location *rightLoc;
+
+@property (strong, nonatomic) DetailInfoView *leftView;
+@property (strong, nonatomic) DetailInfoView *currentView;
+@property (strong, nonatomic) DetailInfoView *rightView;
+
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) DetailInfoView *infoView;
 

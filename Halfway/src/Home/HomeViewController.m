@@ -50,7 +50,7 @@
             NSDictionary *dictionary = [[placemarks objectAtIndex:0] addressDictionary];
             NSString *string=[NSString stringWithFormat:@"%@ %@, %@ %@ ",[dictionary valueForKey:@"Street"],[dictionary valueForKey:@"City"],[dictionary valueForKey:@"State"],[dictionary valueForKey:@"ZIP"]];
             self.startAddress.text =string;
-            NSLog(@"HERE:%@",string);
+            //NSLog(@"HERE:%@",string);
         }
         
     }];
