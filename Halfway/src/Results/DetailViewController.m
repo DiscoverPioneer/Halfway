@@ -36,8 +36,16 @@
     self.infoView.nameLabel.text = self.loc.name;
     self.infoView.street1Label.text = self.loc.street1;
     self.infoView.regionLabel.text = [self.loc formatRegionString];
-    self.infoView.descriptionLabel.text = self.loc.description;
+    
+    @try{
+        self.infoView.descriptionLabel.text = self.loc.description;
+    }
+    @catch (NSException *exception) {
+        self.infoView.descriptionLabel.text=@"No Description Available";
+    }
+    @finally {
     [self.infoView.descriptionLabel sizeToFit];
+
     
     // Initialize Scroll View
     NSArray *colors = [NSArray arrayWithObjects:[UIColor redColor], [UIColor greenColor], [UIColor blueColor], nil];
@@ -56,6 +64,7 @@
     
     //self.infoView = [[[NSBundle mainBundle] loadNibNamed:@"DetailInfoView" owner:self options:nil] objectAtIndex:0];
     [self.scrollView addSubview:self.infoView];
+    }
     
 }
 - (void)viewWillAppear:(BOOL)animated {
