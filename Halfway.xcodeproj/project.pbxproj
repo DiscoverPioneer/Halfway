@@ -27,6 +27,24 @@
 		09681A1118A685C600240950 /* Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 09681A1018A685C600240950 /* Transparent.png */; };
 		09681A1518A68D5E00240950 /* AdvanceHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A1318A68D5E00240950 /* AdvanceHomeViewController.m */; };
 		09681A1618A68D5E00240950 /* AdvanceHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09681A1418A68D5E00240950 /* AdvanceHomeViewController.xib */; };
+		09681A4B18A6B3CF00240950 /* OWActivityViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09681A1818A6B3CF00240950 /* OWActivityViewController.strings */; };
+		09681A4C18A6B3CF00240950 /* OWActivityViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09681A1B18A6B3CF00240950 /* OWActivityViewController.strings */; };
+		09681A4D18A6B3CF00240950 /* OWActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A2518A6B3CF00240950 /* OWActivity.m */; };
+		09681A4E18A6B3CF00240950 /* OWActivityDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A2718A6B3CF00240950 /* OWActivityDelegateObject.m */; };
+		09681A4F18A6B3CF00240950 /* OWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A2918A6B3CF00240950 /* OWActivityView.m */; };
+		09681A5018A6B3CF00240950 /* OWActivityViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09681A2A18A6B3CF00240950 /* OWActivityViewController.bundle */; };
+		09681A5118A6B3CF00240950 /* OWActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A2C18A6B3CF00240950 /* OWActivityViewController.m */; };
+		09681A5218A6B3CF00240950 /* OWCopyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A2E18A6B3CF00240950 /* OWCopyActivity.m */; };
+		09681A5318A6B3CF00240950 /* OWFacebookActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3018A6B3CF00240950 /* OWFacebookActivity.m */; };
+		09681A5418A6B3CF00240950 /* OWMailActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3218A6B3CF00240950 /* OWMailActivity.m */; };
+		09681A5518A6B3CF00240950 /* OWMapsActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3418A6B3CF00240950 /* OWMapsActivity.m */; };
+		09681A5618A6B3CF00240950 /* OWMessageActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3618A6B3CF00240950 /* OWMessageActivity.m */; };
+		09681A5718A6B3CF00240950 /* OWPrintActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3818A6B3CF00240950 /* OWPrintActivity.m */; };
+		09681A5818A6B3CF00240950 /* OWSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3A18A6B3CF00240950 /* OWSafariActivity.m */; };
+		09681A5918A6B3CF00240950 /* OWSaveToCameraRollActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3C18A6B3CF00240950 /* OWSaveToCameraRollActivity.m */; };
+		09681A5A18A6B3CF00240950 /* OWSinaWeiboActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A3E18A6B3CF00240950 /* OWSinaWeiboActivity.m */; };
+		09681A5B18A6B3CF00240950 /* OWTwitterActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A4018A6B3CF00240950 /* OWTwitterActivity.m */; };
+		09681A5D18A6B3CF00240950 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A4418A6B3CF00240950 /* UIImage+Resize.m */; };
 		FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34B618A5EF000091FA76 /* HomeViewController.m */; };
 		FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34B718A5EF000091FA76 /* HomeViewController.xib */; };
 		FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */; };
@@ -75,6 +93,47 @@
 		09681A1218A68D5E00240950 /* AdvanceHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvanceHomeViewController.h; sourceTree = "<group>"; };
 		09681A1318A68D5E00240950 /* AdvanceHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvanceHomeViewController.m; sourceTree = "<group>"; };
 		09681A1418A68D5E00240950 /* AdvanceHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvanceHomeViewController.xib; sourceTree = "<group>"; };
+		09681A1918A6B3CF00240950 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A1C18A6B3CF00240950 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A1D18A6B3CF00240950 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A1E18A6B3CF00240950 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A1F18A6B3CF00240950 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A2018A6B3CF00240950 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A2118A6B3CF00240950 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		09681A2218A6B3CF00240950 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OWActivityViewController.strings"; sourceTree = "<group>"; };
+		09681A2318A6B3CF00240950 /* OWActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivities.h; sourceTree = "<group>"; };
+		09681A2418A6B3CF00240950 /* OWActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivity.h; sourceTree = "<group>"; };
+		09681A2518A6B3CF00240950 /* OWActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivity.m; sourceTree = "<group>"; };
+		09681A2618A6B3CF00240950 /* OWActivityDelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivityDelegateObject.h; sourceTree = "<group>"; };
+		09681A2718A6B3CF00240950 /* OWActivityDelegateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivityDelegateObject.m; sourceTree = "<group>"; };
+		09681A2818A6B3CF00240950 /* OWActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivityView.h; sourceTree = "<group>"; };
+		09681A2918A6B3CF00240950 /* OWActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivityView.m; sourceTree = "<group>"; };
+		09681A2A18A6B3CF00240950 /* OWActivityViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = OWActivityViewController.bundle; sourceTree = "<group>"; };
+		09681A2B18A6B3CF00240950 /* OWActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivityViewController.h; sourceTree = "<group>"; };
+		09681A2C18A6B3CF00240950 /* OWActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivityViewController.m; sourceTree = "<group>"; };
+		09681A2D18A6B3CF00240950 /* OWCopyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWCopyActivity.h; sourceTree = "<group>"; };
+		09681A2E18A6B3CF00240950 /* OWCopyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWCopyActivity.m; sourceTree = "<group>"; };
+		09681A2F18A6B3CF00240950 /* OWFacebookActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWFacebookActivity.h; sourceTree = "<group>"; };
+		09681A3018A6B3CF00240950 /* OWFacebookActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWFacebookActivity.m; sourceTree = "<group>"; };
+		09681A3118A6B3CF00240950 /* OWMailActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMailActivity.h; sourceTree = "<group>"; };
+		09681A3218A6B3CF00240950 /* OWMailActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMailActivity.m; sourceTree = "<group>"; };
+		09681A3318A6B3CF00240950 /* OWMapsActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMapsActivity.h; sourceTree = "<group>"; };
+		09681A3418A6B3CF00240950 /* OWMapsActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMapsActivity.m; sourceTree = "<group>"; };
+		09681A3518A6B3CF00240950 /* OWMessageActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMessageActivity.h; sourceTree = "<group>"; };
+		09681A3618A6B3CF00240950 /* OWMessageActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMessageActivity.m; sourceTree = "<group>"; };
+		09681A3718A6B3CF00240950 /* OWPrintActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPrintActivity.h; sourceTree = "<group>"; };
+		09681A3818A6B3CF00240950 /* OWPrintActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPrintActivity.m; sourceTree = "<group>"; };
+		09681A3918A6B3CF00240950 /* OWSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSafariActivity.h; sourceTree = "<group>"; };
+		09681A3A18A6B3CF00240950 /* OWSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSafariActivity.m; sourceTree = "<group>"; };
+		09681A3B18A6B3CF00240950 /* OWSaveToCameraRollActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSaveToCameraRollActivity.h; sourceTree = "<group>"; };
+		09681A3C18A6B3CF00240950 /* OWSaveToCameraRollActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSaveToCameraRollActivity.m; sourceTree = "<group>"; };
+		09681A3D18A6B3CF00240950 /* OWSinaWeiboActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSinaWeiboActivity.h; sourceTree = "<group>"; };
+		09681A3E18A6B3CF00240950 /* OWSinaWeiboActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSinaWeiboActivity.m; sourceTree = "<group>"; };
+		09681A3F18A6B3CF00240950 /* OWTwitterActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWTwitterActivity.h; sourceTree = "<group>"; };
+		09681A4018A6B3CF00240950 /* OWTwitterActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWTwitterActivity.m; sourceTree = "<group>"; };
+		09681A4318A6B3CF00240950 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		09681A4418A6B3CF00240950 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		09681A4A18A6B3CF00240950 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OWActivityViewController.strings"; sourceTree = "<group>"; };
 		FA4F34B518A5EF000091FA76 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA4F34B618A5EF000091FA76 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FA4F34B718A5EF000091FA76 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -139,6 +198,7 @@
 		0968190B18A5CE5C00240950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09681A1718A6B3CE00240950 /* OWActivityViewController */,
 				09681A0C18A626AD00240950 /* MapKit.framework */,
 				09681A0518A5FD6E00240950 /* CoreLocation.framework */,
 				0968190C18A5CE5C00240950 /* Foundation.framework */,
@@ -188,6 +248,55 @@
 				0968192E18A5CE5C00240950 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09681A1718A6B3CE00240950 /* OWActivityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09681A1818A6B3CF00240950 /* OWActivityViewController.strings */,
+				09681A1A18A6B3CF00240950 /* Localizations */,
+				09681A2318A6B3CF00240950 /* OWActivities.h */,
+				09681A2418A6B3CF00240950 /* OWActivity.h */,
+				09681A2518A6B3CF00240950 /* OWActivity.m */,
+				09681A2618A6B3CF00240950 /* OWActivityDelegateObject.h */,
+				09681A2718A6B3CF00240950 /* OWActivityDelegateObject.m */,
+				09681A2818A6B3CF00240950 /* OWActivityView.h */,
+				09681A2918A6B3CF00240950 /* OWActivityView.m */,
+				09681A2A18A6B3CF00240950 /* OWActivityViewController.bundle */,
+				09681A2B18A6B3CF00240950 /* OWActivityViewController.h */,
+				09681A2C18A6B3CF00240950 /* OWActivityViewController.m */,
+				09681A2D18A6B3CF00240950 /* OWCopyActivity.h */,
+				09681A2E18A6B3CF00240950 /* OWCopyActivity.m */,
+				09681A2F18A6B3CF00240950 /* OWFacebookActivity.h */,
+				09681A3018A6B3CF00240950 /* OWFacebookActivity.m */,
+				09681A3118A6B3CF00240950 /* OWMailActivity.h */,
+				09681A3218A6B3CF00240950 /* OWMailActivity.m */,
+				09681A3318A6B3CF00240950 /* OWMapsActivity.h */,
+				09681A3418A6B3CF00240950 /* OWMapsActivity.m */,
+				09681A3518A6B3CF00240950 /* OWMessageActivity.h */,
+				09681A3618A6B3CF00240950 /* OWMessageActivity.m */,
+				09681A3718A6B3CF00240950 /* OWPrintActivity.h */,
+				09681A3818A6B3CF00240950 /* OWPrintActivity.m */,
+				09681A3918A6B3CF00240950 /* OWSafariActivity.h */,
+				09681A3A18A6B3CF00240950 /* OWSafariActivity.m */,
+				09681A3B18A6B3CF00240950 /* OWSaveToCameraRollActivity.h */,
+				09681A3C18A6B3CF00240950 /* OWSaveToCameraRollActivity.m */,
+				09681A3D18A6B3CF00240950 /* OWSinaWeiboActivity.h */,
+				09681A3E18A6B3CF00240950 /* OWSinaWeiboActivity.m */,
+				09681A3F18A6B3CF00240950 /* OWTwitterActivity.h */,
+				09681A4018A6B3CF00240950 /* OWTwitterActivity.m */,
+				09681A4318A6B3CF00240950 /* UIImage+Resize.h */,
+				09681A4418A6B3CF00240950 /* UIImage+Resize.m */,
+			);
+			path = OWActivityViewController;
+			sourceTree = "<group>";
+		};
+		09681A1A18A6B3CF00240950 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				09681A1B18A6B3CF00240950 /* OWActivityViewController.strings */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 		FA4F34B318A5EF000091FA76 /* src */ = {
@@ -317,6 +426,12 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
+				es,
+				fr,
+				ru,
+				sv,
+				"zh-Hans",
 			);
 			mainGroup = 0968190018A5CE5C00240950;
 			productRefGroup = 0968190A18A5CE5C00240950 /* Products */;
@@ -338,7 +453,10 @@
 				0968191718A5CE5C00240950 /* InfoPlist.strings in Resources */,
 				0968191F18A5CE5C00240950 /* Images.xcassets in Resources */,
 				09681A0F18A684AB00240950 /* Road.jpg in Resources */,
+				09681A4C18A6B3CF00240950 /* OWActivityViewController.strings in Resources */,
+				09681A4B18A6B3CF00240950 /* OWActivityViewController.strings in Resources */,
 				09681A0B18A6221D00240950 /* DetailViewController.xib in Resources */,
+				09681A5018A6B3CF00240950 /* OWActivityViewController.bundle in Resources */,
 				09681A1118A685C600240950 /* Transparent.png in Resources */,
 				09681A1618A68D5E00240950 /* AdvanceHomeViewController.xib in Resources */,
 				FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */,
@@ -362,15 +480,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09681A5718A6B3CF00240950 /* OWPrintActivity.m in Sources */,
 				09681A1518A68D5E00240950 /* AdvanceHomeViewController.m in Sources */,
+				09681A5418A6B3CF00240950 /* OWMailActivity.m in Sources */,
+				09681A4F18A6B3CF00240950 /* OWActivityView.m in Sources */,
+				09681A5518A6B3CF00240950 /* OWMapsActivity.m in Sources */,
+				09681A5118A6B3CF00240950 /* OWActivityViewController.m in Sources */,
+				09681A5818A6B3CF00240950 /* OWSafariActivity.m in Sources */,
+				09681A5218A6B3CF00240950 /* OWCopyActivity.m in Sources */,
 				09681A0A18A6221D00240950 /* DetailViewController.m in Sources */,
+				09681A5918A6B3CF00240950 /* OWSaveToCameraRollActivity.m in Sources */,
 				FA4F34CC18A62F770091FA76 /* Location.m in Sources */,
 				0968191D18A5CE5C00240950 /* AppDelegate.m in Sources */,
+				09681A4D18A6B3CF00240950 /* OWActivity.m in Sources */,
 				0968191918A5CE5C00240950 /* main.m in Sources */,
 				FA4F34C818A62A220091FA76 /* ResultsCell.m in Sources */,
+				09681A5B18A6B3CF00240950 /* OWTwitterActivity.m in Sources */,
 				FA4F34D518A695B60091FA76 /* DetailInfoView.m in Sources */,
 				FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */,
+				09681A5618A6B3CF00240950 /* OWMessageActivity.m in Sources */,
+				09681A5318A6B3CF00240950 /* OWFacebookActivity.m in Sources */,
 				FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */,
+				09681A5A18A6B3CF00240950 /* OWSinaWeiboActivity.m in Sources */,
+				09681A4E18A6B3CF00240950 /* OWActivityDelegateObject.m in Sources */,
+				09681A5D18A6B3CF00240950 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +540,29 @@
 				0968192F18A5CE5C00240950 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		09681A1818A6B3CF00240950 /* OWActivityViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09681A1918A6B3CF00240950 /* en */,
+				09681A4A18A6B3CF00240950 /* zh-Hans */,
+			);
+			name = OWActivityViewController.strings;
+			sourceTree = "<group>";
+		};
+		09681A1B18A6B3CF00240950 /* OWActivityViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09681A1C18A6B3CF00240950 /* de */,
+				09681A1D18A6B3CF00240950 /* en */,
+				09681A1E18A6B3CF00240950 /* es */,
+				09681A1F18A6B3CF00240950 /* fr */,
+				09681A2018A6B3CF00240950 /* ru */,
+				09681A2118A6B3CF00240950 /* sv */,
+				09681A2218A6B3CF00240950 /* zh-Hans */,
+			);
+			name = OWActivityViewController.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -492,6 +648,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Halfway/Halfway-Prefix.pch";
 				INFOPLIST_FILE = "Halfway/Halfway-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/Halfway/OWActivityViewController/WeChatSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -505,6 +665,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Halfway/Halfway-Prefix.pch";
 				INFOPLIST_FILE = "Halfway/Halfway-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/Halfway/OWActivityViewController/WeChatSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
