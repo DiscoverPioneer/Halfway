@@ -161,6 +161,7 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     DetailViewController *DVC = [[DetailViewController alloc]init];
     DVC.loc = [self.resultsArray objectAtIndex:indexPath.row];
+    DVC.resultsArray = self.resultsArray;
     
     [self.navigationController pushViewController:DVC animated:YES];
 }

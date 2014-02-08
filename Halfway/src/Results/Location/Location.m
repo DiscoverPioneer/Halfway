@@ -25,8 +25,9 @@
         self.state = [address objectForKey:@"state"];
         self.zipCode = [address objectForKey:@"postalcode"];
         
-        //NSDictionary *ancestors = [dictionary objectForKey:@"ancestors"];
-        //self.stateAbbrv = [ancestors objectForKey:@"abbrv"];
+        NSArray *ancestors = [dictionary objectForKey:@"ancestors"];
+        NSDictionary *a1 = [ancestors objectAtIndex:1];
+        self.stateAbbrv = [a1 objectForKey:@"abbrv"];
         
         self.latitude = [[dictionary objectForKey:@"latitude"] floatValue];
         self.longitude = [[dictionary objectForKey:@"longitude"] floatValue];
