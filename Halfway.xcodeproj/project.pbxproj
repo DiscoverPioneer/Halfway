@@ -23,6 +23,8 @@
 		09681A0A18A6221D00240950 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09681A0818A6221D00240950 /* DetailViewController.m */; };
 		09681A0B18A6221D00240950 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09681A0918A6221D00240950 /* DetailViewController.xib */; };
 		09681A0D18A626AD00240950 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09681A0C18A626AD00240950 /* MapKit.framework */; };
+		09681A0F18A684AB00240950 /* Road.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09681A0E18A684AB00240950 /* Road.jpg */; };
+		09681A1118A685C600240950 /* Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 09681A1018A685C600240950 /* Transparent.png */; };
 		FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34B618A5EF000091FA76 /* HomeViewController.m */; };
 		FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34B718A5EF000091FA76 /* HomeViewController.xib */; };
 		FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */; };
@@ -64,6 +66,8 @@
 		09681A0818A6221D00240950 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		09681A0918A6221D00240950 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		09681A0C18A626AD00240950 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		09681A0E18A684AB00240950 /* Road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Road.jpg; sourceTree = "<group>"; };
+		09681A1018A685C600240950 /* Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Transparent.png; sourceTree = "<group>"; };
 		FA4F34B518A5EF000091FA76 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA4F34B618A5EF000091FA76 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FA4F34B718A5EF000091FA76 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				FA4F34B518A5EF000091FA76 /* HomeViewController.h */,
 				FA4F34B618A5EF000091FA76 /* HomeViewController.m */,
 				FA4F34B718A5EF000091FA76 /* HomeViewController.xib */,
+				09681A0E18A684AB00240950 /* Road.jpg */,
+				09681A1018A685C600240950 /* Transparent.png */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -306,7 +312,9 @@
 			files = (
 				0968191718A5CE5C00240950 /* InfoPlist.strings in Resources */,
 				0968191F18A5CE5C00240950 /* Images.xcassets in Resources */,
+				09681A0F18A684AB00240950 /* Road.jpg in Resources */,
 				09681A0B18A6221D00240950 /* DetailViewController.xib in Resources */,
+				09681A1118A685C600240950 /* Transparent.png in Resources */,
 				FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */,
 				FA4F34C318A5EF000091FA76 /* ResultsViewController.xib in Resources */,
 				FA4F34CF18A64A750091FA76 /* ResultsCell.xib in Resources */,

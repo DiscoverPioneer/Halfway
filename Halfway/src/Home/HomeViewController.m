@@ -148,6 +148,13 @@
     //Go to results page
     ResultsViewController *rvc = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
     [rvc setResultsArray:[self makeResultsArrayFromData:[json objectForKey:@"data"]]];
+    rvc.lat1 = [lat1 floatValue];
+    rvc.lon1 = [lon1 floatValue];
+    rvc.lat2 = [lat2 floatValue];
+    rvc.lon2 = [lon2 floatValue];
+    
+    rvc.midlat =(rvc.lat1 + rvc.lat2)/2;
+    rvc.midlon = (rvc.lon1 + rvc.lon1)/2;
     [self.navigationController pushViewController:rvc animated:YES];
 }
 - (void)didReceiveMemoryWarning
