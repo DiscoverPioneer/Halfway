@@ -10,5 +10,7 @@
 
 @interface HomeViewController : UIViewController
 
+- (IBAction)didExecuteSearch:(UIButton *)sender;
+
 - (IBAction)bypass:(id)sender;
 @end

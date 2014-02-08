@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "TestViewController.h"
+#import "ResultsViewController.h"
+
 @interface HomeViewController ()
 
 @end
@@ -41,6 +43,12 @@
     TestViewController *TVC =[[TestViewController alloc]init];
     [self presentViewController:TVC animated:YES completion:nil];
 }
+- (IBAction)didExecuteSearch:(UIButton *)sender
+{
+    ResultsViewController *rvc = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+    [self.navigationController pushViewController:rvc animated:YES];
+}
+
 @end
 
 
