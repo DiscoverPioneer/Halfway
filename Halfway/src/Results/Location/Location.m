@@ -15,21 +15,31 @@
     self = [super init];
     if (self)
     {
-        self.name = [dictionary objectForKey:@"name"];
-        self.description = [dictionary objectForKey:@"description"];
+        @try {
+            self.name = [dictionary objectForKey:@"name"];
+            self.description = [dictionary objectForKey:@"description"];
+            
+            NSDictionary *address = [dictionary objectForKey:@"address_obj"];
+            self.street1 = [address objectForKey:@"street1"];
+            self.street2 = [address objectForKey:@"street2"];
+            self.city = [address objectForKey:@"city"];
+            self.state = [address objectForKey:@"state"];
+            self.zipCode = [address objectForKey:@"postalcode"];
+            
+            //NSDictionary *ancestors = [dictionary objectForKey:@"ancestors"];
+            //self.stateAbbrv = [ancestors objectForKey:@"abbrv"];
+            
+            self.latitude = [[dictionary objectForKey:@"latitude"] floatValue];
+            self.longitude = [[dictionary objectForKey:@"longitude"] floatValue];
+        }
+        @catch (NSException *exception) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Whoops" message:@"Looks like there was an error" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        }
+        @finally {
+            
+        }
         
-        NSDictionary *address = [dictionary objectForKey:@"address_obj"];
-        self.street1 = [address objectForKey:@"street1"];
-        self.street2 = [address objectForKey:@"street2"];
-        self.city = [address objectForKey:@"city"];
-        self.state = [address objectForKey:@"state"];
-        self.zipCode = [address objectForKey:@"postalcode"];
-        
-        //NSDictionary *ancestors = [dictionary objectForKey:@"ancestors"];
-        //self.stateAbbrv = [ancestors objectForKey:@"abbrv"];
-        
-        self.latitude = [[dictionary objectForKey:@"latitude"] floatValue];
-        self.longitude = [[dictionary objectForKey:@"longitude"] floatValue];
     }
     return self;
 }
