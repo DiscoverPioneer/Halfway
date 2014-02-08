@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultsViewController : UIViewController{
-    
-}
-@property (strong,nonatomic) NSArray *resultsArray;
+@interface ResultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *resultsArray;
 
 @end
