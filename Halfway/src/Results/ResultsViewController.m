@@ -65,30 +65,24 @@
 {
     // Method to switch to the selected segments interpreted display mode.
     
-    // Clear subviews
-    //for (UIView *subView in self.view.subviews)
-      //  [subView removeFromSuperview];
-    
     // Set desired view
     if ([self.displayOption selectedSegmentIndex] == 1)
     {
         // Currently displaying TableView
         // Switch to Map View
+        NSLog(@"Switch to Map");
         [self.tableView removeFromSuperview];
         [self.view addSubview:self.mapView];
-        NSLog(@"Switch to Map");
     }
     else
     {
         // Currently displaying Map View
         // Switch to TableView
+        NSLog(@"Switch to Table");
         [self.mapView removeFromSuperview];
         [self.view addSubview:self.tableView];
-        NSLog(@"Switch to Table");
     }
 }
-
-
 
 # pragma mark Table View
 
@@ -97,7 +91,7 @@
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat width = self.view.frame.size.width;
-    CGFloat height = self.view.frame.size.height - 50;
+    CGFloat height = self.view.frame.size.height;
     CGRect tableFrame = CGRectMake(x, y, width, height);
     
     UITableView *tableView = [[UITableView alloc]initWithFrame:tableFrame style:UITableViewStylePlain];

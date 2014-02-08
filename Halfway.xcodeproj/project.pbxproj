@@ -24,6 +24,7 @@
 		FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34B718A5EF000091FA76 /* HomeViewController.xib */; };
 		FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */; };
 		FA4F34C318A5EF000091FA76 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */; };
+		FA4F34C818A62A220091FA76 /* ResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34C718A62A220091FA76 /* ResultsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		FA4F34B918A5EF000091FA76 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
+		FA4F34C618A62A220091FA76 /* ResultsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsCell.h; sourceTree = "<group>"; };
+		FA4F34C718A62A220091FA76 /* ResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 		FA4F34B818A5EF000091FA76 /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				FA4F34C618A62A220091FA76 /* ResultsCell.h */,
+				FA4F34C718A62A220091FA76 /* ResultsCell.m */,
 				FA4F34B918A5EF000091FA76 /* ResultsViewController.h */,
 				FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */,
 				FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */,
@@ -287,6 +292,7 @@
 			files = (
 				0968191D18A5CE5C00240950 /* AppDelegate.m in Sources */,
 				0968191918A5CE5C00240950 /* main.m in Sources */,
+				FA4F34C818A62A220091FA76 /* ResultsCell.m in Sources */,
 				FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */,
 				FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */,
 			);
