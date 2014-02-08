@@ -19,6 +19,8 @@
 		0968192818A5CE5C00240950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0968191018A5CE5C00240950 /* UIKit.framework */; };
 		0968193018A5CE5C00240950 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0968192E18A5CE5C00240950 /* InfoPlist.strings */; };
 		0968193218A5CE5C00240950 /* HalfwayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193118A5CE5C00240950 /* HalfwayTests.m */; };
+		0968193E18A5CE8000240950 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193C18A5CE8000240950 /* HomeViewController.m */; };
+		0968193F18A5CE8000240950 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0968193D18A5CE8000240950 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		0968192D18A5CE5C00240950 /* HalfwayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HalfwayTests-Info.plist"; sourceTree = "<group>"; };
 		0968192F18A5CE5C00240950 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0968193118A5CE5C00240950 /* HalfwayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfwayTests.m; sourceTree = "<group>"; };
+		0968193B18A5CE8000240950 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0968193C18A5CE8000240950 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0968193D18A5CE8000240950 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				0968191B18A5CE5C00240950 /* AppDelegate.h */,
 				0968191C18A5CE5C00240950 /* AppDelegate.m */,
+				0968193B18A5CE8000240950 /* HomeViewController.h */,
+				0968193C18A5CE8000240950 /* HomeViewController.m */,
+				0968193D18A5CE8000240950 /* HomeViewController.xib */,
 				0968191E18A5CE5C00240950 /* Images.xcassets */,
 				0968191318A5CE5C00240950 /* Supporting Files */,
 			);
@@ -221,6 +229,7 @@
 			files = (
 				0968191718A5CE5C00240950 /* InfoPlist.strings in Resources */,
 				0968191F18A5CE5C00240950 /* Images.xcassets in Resources */,
+				0968193F18A5CE8000240950 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +250,7 @@
 			files = (
 				0968191D18A5CE5C00240950 /* AppDelegate.m in Sources */,
 				0968191918A5CE5C00240950 /* main.m in Sources */,
+				0968193E18A5CE8000240950 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
