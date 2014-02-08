@@ -21,6 +21,10 @@
 		0968193218A5CE5C00240950 /* HalfwayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193118A5CE5C00240950 /* HalfwayTests.m */; };
 		0968193E18A5CE8000240950 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193C18A5CE8000240950 /* HomeViewController.m */; };
 		0968193F18A5CE8000240950 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0968193D18A5CE8000240950 /* HomeViewController.xib */; };
+		0968194318A5CFD400240950 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968194118A5CFD400240950 /* TestViewController.m */; };
+		0968194418A5CFD400240950 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0968194218A5CFD400240950 /* TestViewController.xib */; };
+		0968194718A5D25000240950 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0968194518A5D25000240950 /* GHUnit.framework */; };
+		0968194818A5D25000240950 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0968194618A5D25000240950 /* YAJL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,11 @@
 		0968193B18A5CE8000240950 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0968193C18A5CE8000240950 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0968193D18A5CE8000240950 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		0968194018A5CFD400240950 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		0968194118A5CFD400240950 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		0968194218A5CFD400240950 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		0968194518A5D25000240950 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
+		0968194618A5D25000240950 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,8 @@
 				0968190F18A5CE5C00240950 /* CoreGraphics.framework in Frameworks */,
 				0968191118A5CE5C00240950 /* UIKit.framework in Frameworks */,
 				0968190D18A5CE5C00240950 /* Foundation.framework in Frameworks */,
+				0968194818A5D25000240950 /* YAJL.framework in Frameworks */,
+				0968194718A5D25000240950 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +112,8 @@
 		0968190B18A5CE5C00240950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0968194518A5D25000240950 /* GHUnit.framework */,
+				0968194618A5D25000240950 /* YAJL.framework */,
 				0968190C18A5CE5C00240950 /* Foundation.framework */,
 				0968190E18A5CE5C00240950 /* CoreGraphics.framework */,
 				0968191018A5CE5C00240950 /* UIKit.framework */,
@@ -117,6 +130,9 @@
 				0968193B18A5CE8000240950 /* HomeViewController.h */,
 				0968193C18A5CE8000240950 /* HomeViewController.m */,
 				0968193D18A5CE8000240950 /* HomeViewController.xib */,
+				0968194018A5CFD400240950 /* TestViewController.h */,
+				0968194118A5CFD400240950 /* TestViewController.m */,
+				0968194218A5CFD400240950 /* TestViewController.xib */,
 				0968191E18A5CE5C00240950 /* Images.xcassets */,
 				0968191318A5CE5C00240950 /* Supporting Files */,
 			);
@@ -229,6 +245,7 @@
 			files = (
 				0968191718A5CE5C00240950 /* InfoPlist.strings in Resources */,
 				0968191F18A5CE5C00240950 /* Images.xcassets in Resources */,
+				0968194418A5CFD400240950 /* TestViewController.xib in Resources */,
 				0968193F18A5CE8000240950 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +267,7 @@
 			files = (
 				0968191D18A5CE5C00240950 /* AppDelegate.m in Sources */,
 				0968191918A5CE5C00240950 /* main.m in Sources */,
+				0968194318A5CFD400240950 /* TestViewController.m in Sources */,
 				0968193E18A5CE8000240950 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,9 +387,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/Halfway,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Halfway/Halfway-Prefix.pch";
 				INFOPLIST_FILE = "Halfway/Halfway-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -382,9 +408,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/Halfway,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Halfway/Halfway-Prefix.pch";
 				INFOPLIST_FILE = "Halfway/Halfway-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
