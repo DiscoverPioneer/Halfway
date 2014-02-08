@@ -162,7 +162,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     DetailViewController *DVC = [[DetailViewController alloc]init];
     
     DVC.resultsArray = self.resultsArray;
@@ -175,6 +174,8 @@
     DVC.selectedIndex = indexPath.row;
     
     [self.navigationController pushViewController:DVC animated:YES];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+
 }
 
 # pragma mark Map View

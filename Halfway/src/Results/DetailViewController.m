@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "Location.h"
 #import "DetailInfoView.h"
+#import "OWActivityViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -185,6 +186,63 @@
     // */
 }
 
+
+-(void)shareAction{
+    // Prepare activities
+    //
+    OWTwitterActivity *twitterActivity = [[OWTwitterActivity alloc] init];
+    OWMailActivity *mailActivity = [[OWMailActivity alloc] init];
+    //OWSafariActivity *safariActivity = [[OWSafariActivity alloc] init];
+    //OWSaveToCameraRollActivity *saveToCameraRollActivity = [[OWSaveToCameraRollActivity alloc] init];
+    //OWMapsActivity *mapsActivity = [[OWMapsActivity alloc] init];
+    //OWPrintActivity *printActivity = [[OWPrintActivity alloc] init];
+    //OWCopyActivity *copyActivity = [[OWCopyActivity alloc] init];
+    OWFacebookActivity *facebookActivity =[[OWFacebookActivity alloc] init];
+    //OWMessageActivity *messageActivity = [[OWMessageActivity alloc] init];
+    // Create some custom activity
+    //
+    OWActivity *customActivity;
+    customActivity= [[OWActivity alloc] initWithTitle:@"Share"
+                                                             image:[UIImage imageNamed:@"OWActivityViewController.bundle/Icon_Custom"]
+                                                       actionBlock:^(OWActivity *activity, OWActivityViewController *activityViewController) {
+                                                           [activityViewController dismissViewControllerAnimated:YES completion:^{
+                                                               NSLog(@"Info: %@", activityViewController.userInfo);
+                                                           }];
+                                                       }];
+    
+    // Compile activities into an array, we will pass that array to
+    // OWActivityViewController on the next step
+    //
+    
+    NSMutableArray *activities = [NSMutableArray arrayWithObject:mailActivity];
+    
+    // For some device may not support message (ie, Simulator and iPod Touch).
+    // There is a bug in the Simulator when you configured iMessage under OS X,
+    // for detailed information, refer to: http://stackoverflow.com/questions/9349381/mfmessagecomposeviewcontroller-on-simulator-cansendtext
+    if ([MFMessageComposeViewController canSendText]) {
+        OWMessageActivity *messageActivity = [[OWMessageActivity alloc] init];
+        [activities addObject:messageActivity];
+    }
+    
+    [activities addObjectsFromArray:@[facebookActivity, twitterActivity]];
+    
+    
+    //[activities addObjectsFromArray:@[
+                                      //safariActivity, mapsActivity, printActivity, copyActivity, customActivity]];
+    
+    
+    NSString *string = [NSString stringWithFormat:@"Check out this HotSpot to meetup! %@\n%@, %@",self.loc.name,self.loc.street1,self.infoView.regionLabel.text];
+    
+    // Create OWActivityViewController controller and assign data source
+    //
+    OWActivityViewController *activityViewController = [[OWActivityViewController alloc] initWithViewController:self activities:activities];
+    activityViewController.userInfo = @{
+                                        @"text": string,
+                                        @"coordinate": @{@"latitude": @(self.loc.latitude), @"longitude": @(self.loc.longitude)}
+                                        };
+    
+    [activityViewController presentFromRootViewController];
+}
 @end
 
 

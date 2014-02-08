@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+@interface AdvanceHomeViewController : UIViewController{
+    NSMutableData *responseData;
+    CLLocationManager *locationManager;
+}
 
-@interface AdvanceHomeViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlOutlet;
 - (IBAction)segmentedControlAction:(id)sender;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
