@@ -19,6 +19,7 @@
 		0968192818A5CE5C00240950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0968191018A5CE5C00240950 /* UIKit.framework */; };
 		0968193018A5CE5C00240950 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0968192E18A5CE5C00240950 /* InfoPlist.strings */; };
 		0968193218A5CE5C00240950 /* HalfwayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193118A5CE5C00240950 /* HalfwayTests.m */; };
+		09681A0618A5FD6E00240950 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09681A0518A5FD6E00240950 /* CoreLocation.framework */; };
 		FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34B618A5EF000091FA76 /* HomeViewController.m */; };
 		FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34B718A5EF000091FA76 /* HomeViewController.xib */; };
 		FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */; };
@@ -52,6 +53,7 @@
 		0968192D18A5CE5C00240950 /* HalfwayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HalfwayTests-Info.plist"; sourceTree = "<group>"; };
 		0968192F18A5CE5C00240950 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0968193118A5CE5C00240950 /* HalfwayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfwayTests.m; sourceTree = "<group>"; };
+		09681A0518A5FD6E00240950 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FA4F34B518A5EF000091FA76 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA4F34B618A5EF000091FA76 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FA4F34B718A5EF000091FA76 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09681A0618A5FD6E00240950 /* CoreLocation.framework in Frameworks */,
 				0968190F18A5CE5C00240950 /* CoreGraphics.framework in Frameworks */,
 				0968191118A5CE5C00240950 /* UIKit.framework in Frameworks */,
 				0968190D18A5CE5C00240950 /* Foundation.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		0968190B18A5CE5C00240950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09681A0518A5FD6E00240950 /* CoreLocation.framework */,
 				0968190C18A5CE5C00240950 /* Foundation.framework */,
 				0968190E18A5CE5C00240950 /* CoreGraphics.framework */,
 				0968191018A5CE5C00240950 /* UIKit.framework */,

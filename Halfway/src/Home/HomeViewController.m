@@ -30,6 +30,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    //Make Location
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // Best
+    [locationManager startUpdatingLocation];
 }
 
 - (IBAction)didExecuteSearch:(UIButton *)sender
@@ -37,7 +44,11 @@
     
     //Make API Call
     //Show Activity Indicator
-    NSURL *myURL = [NSURL URLWithString:@"http://api.tripadvisor.com/api/partner/1.0/map/30.26532,-97.73852/restaurants?key=92C34F58BB4F4E03894F5D171B79857E&limit=10"];
+
+    NSString *lat = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude];
+    NSString *lon = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.tripadvisor.com/api/partner/1.0/map/%@,%@/restaurants?key=92C34F58BB4F4E03894F5D171B79857E&limit=10",lat,lon];
+    NSURL *myURL = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
     
     NSURLConnection *connection;
