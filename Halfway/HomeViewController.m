@@ -4,10 +4,10 @@
 //
 //  Created by Phil Scarfi on 2/7/14.
 //  Copyright (c) 2014 Pioneer Mobile Applications. All rights reserved.
-//
+//  
 
 #import "HomeViewController.h"
-#import "TestViewController.h"
+
 @interface HomeViewController ()
 
 @end
@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
         
+        
     }
     return self;
 }
@@ -28,12 +29,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
 }
--(void)viewDidAppear:(BOOL)animated{
-    TestViewController *TVC =[[TestViewController alloc]init];
-    [self presentViewController:TVC animated:YES completion:nil];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
