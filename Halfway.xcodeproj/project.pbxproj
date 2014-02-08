@@ -19,10 +19,12 @@
 		0968192818A5CE5C00240950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0968191018A5CE5C00240950 /* UIKit.framework */; };
 		0968193018A5CE5C00240950 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0968192E18A5CE5C00240950 /* InfoPlist.strings */; };
 		0968193218A5CE5C00240950 /* HalfwayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193118A5CE5C00240950 /* HalfwayTests.m */; };
-		0968193E18A5CE8000240950 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0968193C18A5CE8000240950 /* HomeViewController.m */; };
-		0968193F18A5CE8000240950 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0968193D18A5CE8000240950 /* HomeViewController.xib */; };
-		FA02547A18A5E44300BB59E4 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02547818A5E44300BB59E4 /* ResultsViewController.m */; };
-		FA02547B18A5E44300BB59E4 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA02547918A5E44300BB59E4 /* ResultsViewController.xib */; };
+		FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34B618A5EF000091FA76 /* HomeViewController.m */; };
+		FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34B718A5EF000091FA76 /* HomeViewController.xib */; };
+		FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */; };
+		FA4F34C318A5EF000091FA76 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */; };
+		FA4F34C418A5EF000091FA76 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F34BE18A5EF000091FA76 /* TestViewController.m */; };
+		FA4F34C518A5EF000091FA76 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F34BF18A5EF000091FA76 /* TestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +54,15 @@
 		0968192D18A5CE5C00240950 /* HalfwayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HalfwayTests-Info.plist"; sourceTree = "<group>"; };
 		0968192F18A5CE5C00240950 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0968193118A5CE5C00240950 /* HalfwayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfwayTests.m; sourceTree = "<group>"; };
-		0968193B18A5CE8000240950 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		0968193C18A5CE8000240950 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		0968193D18A5CE8000240950 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		FA02547718A5E44300BB59E4 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = src/Results/ResultsViewController.h; sourceTree = "<group>"; };
-		FA02547818A5E44300BB59E4 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = src/Results/ResultsViewController.m; sourceTree = "<group>"; };
-		FA02547918A5E44300BB59E4 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = src/Results/ResultsViewController.xib; sourceTree = "<group>"; };
+		FA4F34B518A5EF000091FA76 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		FA4F34B618A5EF000091FA76 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FA4F34B718A5EF000091FA76 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FA4F34B918A5EF000091FA76 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
+		FA4F34BD18A5EF000091FA76 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		FA4F34BE18A5EF000091FA76 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		FA4F34BF18A5EF000091FA76 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +124,7 @@
 			children = (
 				0968191B18A5CE5C00240950 /* AppDelegate.h */,
 				0968191C18A5CE5C00240950 /* AppDelegate.m */,
-				FA02547E18A5E45C00BB59E4 /* src */,
+				FA4F34B318A5EF000091FA76 /* src */,
 				0968191E18A5CE5C00240950 /* Images.xcassets */,
 				0968191318A5CE5C00240950 /* Supporting Files */,
 			);
@@ -155,33 +160,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FA02547C18A5E44B00BB59E4 /* Home */ = {
+		FA4F34B318A5EF000091FA76 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0968193B18A5CE8000240950 /* HomeViewController.h */,
-				0968193C18A5CE8000240950 /* HomeViewController.m */,
-				0968193D18A5CE8000240950 /* HomeViewController.xib */,
+				FA4F34B418A5EF000091FA76 /* Home */,
+				FA4F34B818A5EF000091FA76 /* Results */,
+				FA4F34BC18A5EF000091FA76 /* Test */,
 			);
-			name = Home;
+			path = src;
 			sourceTree = "<group>";
 		};
-		FA02547D18A5E45100BB59E4 /* Results */ = {
+		FA4F34B418A5EF000091FA76 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FA02547718A5E44300BB59E4 /* ResultsViewController.h */,
-				FA02547818A5E44300BB59E4 /* ResultsViewController.m */,
-				FA02547918A5E44300BB59E4 /* ResultsViewController.xib */,
+				FA4F34B518A5EF000091FA76 /* HomeViewController.h */,
+				FA4F34B618A5EF000091FA76 /* HomeViewController.m */,
+				FA4F34B718A5EF000091FA76 /* HomeViewController.xib */,
 			);
-			name = Results;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		FA02547E18A5E45C00BB59E4 /* src */ = {
+		FA4F34B818A5EF000091FA76 /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				FA02547C18A5E44B00BB59E4 /* Home */,
-				FA02547D18A5E45100BB59E4 /* Results */,
+				FA4F34B918A5EF000091FA76 /* ResultsViewController.h */,
+				FA4F34BA18A5EF000091FA76 /* ResultsViewController.m */,
+				FA4F34BB18A5EF000091FA76 /* ResultsViewController.xib */,
 			);
-			name = src;
+			path = Results;
+			sourceTree = "<group>";
+		};
+		FA4F34BC18A5EF000091FA76 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F34BD18A5EF000091FA76 /* TestViewController.h */,
+				FA4F34BE18A5EF000091FA76 /* TestViewController.m */,
+				FA4F34BF18A5EF000091FA76 /* TestViewController.xib */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0968191718A5CE5C00240950 /* InfoPlist.strings in Resources */,
+				FA4F34C518A5EF000091FA76 /* TestViewController.xib in Resources */,
 				0968191F18A5CE5C00240950 /* Images.xcassets in Resources */,
-				0968193F18A5CE8000240950 /* HomeViewController.xib in Resources */,
-				FA02547B18A5E44300BB59E4 /* ResultsViewController.xib in Resources */,
+				FA4F34C118A5EF000091FA76 /* HomeViewController.xib in Resources */,
+				FA4F34C318A5EF000091FA76 /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +300,9 @@
 			files = (
 				0968191D18A5CE5C00240950 /* AppDelegate.m in Sources */,
 				0968191918A5CE5C00240950 /* main.m in Sources */,
-				0968193E18A5CE8000240950 /* HomeViewController.m in Sources */,
-				FA02547A18A5E44300BB59E4 /* ResultsViewController.m in Sources */,
+				FA4F34C018A5EF000091FA76 /* HomeViewController.m in Sources */,
+				FA4F34C218A5EF000091FA76 /* ResultsViewController.m in Sources */,
+				FA4F34C418A5EF000091FA76 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
