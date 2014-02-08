@@ -16,7 +16,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     self.homeViewController = [[HomeViewController alloc] init];
-    self.window.rootViewController = self.homeViewController;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }
