@@ -49,4 +49,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+# pragma mark Handle URL Requests
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    if (!url) {  return NO; }
+    
+    NSString *URLString = [url absoluteString];
+    [[NSUserDefaults standardUserDefaults] setObject:URLString forKey:@"url"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    return YES;
+}
+
 @end
+
+
+
+
+
+
+
+

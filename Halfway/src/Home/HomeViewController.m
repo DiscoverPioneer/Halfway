@@ -27,7 +27,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"HotSpot";
+        self.title = @"Crosspaths";
         
     }
     return self;
@@ -38,6 +38,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Add padding to UITextFields
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
+    self.startAddress.leftView = paddingView;
+    self.startAddress.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIView *paddingView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
+    self.friendAddress.leftView = paddingView2;
+    self.friendAddress.leftViewMode = UITextFieldViewModeAlways;
     
     //Make Location
     locationManager = [[CLLocationManager alloc] init];
@@ -49,7 +57,8 @@
         if(placemarks.count){
             NSDictionary *dictionary = [[placemarks objectAtIndex:0] addressDictionary];
             NSString *string=[NSString stringWithFormat:@"%@ %@, %@ %@ ",[dictionary valueForKey:@"Street"],[dictionary valueForKey:@"City"],[dictionary valueForKey:@"State"],[dictionary valueForKey:@"ZIP"]];
-            self.startAddress.text =string;
+            self.startAddress.text = string;
+            self.startAddress.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
             //NSLog(@"HERE:%@",string);
         }
         

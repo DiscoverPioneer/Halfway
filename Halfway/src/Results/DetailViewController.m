@@ -33,6 +33,7 @@
         // Custom initialization
         self.title = @"Details";
         self.infoView = [[DetailInfoView alloc] init];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAction)];
         
         /* Page Control and Coordinates
         self.pageControl = [[UIPageControl alloc] init];
@@ -47,6 +48,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.infoView.nameLabel.text = self.currentLoc.name;
+    self.infoView.street1Label.text = self.currentLoc.street1;
+    self.infoView.regionLabel.text = [self.currentLoc formatRegionString];
+    
+    @try{
+        self.infoView.descriptionLabel.text = self.currentLoc.description;
+    }
+    @catch (NSException *exception) {
+        self.infoView.descriptionLabel.text=@"No Description Available";
+    }
+    @finally {
+    [self.infoView.descriptionLabel sizeToFit];
+    }
     
     /* Configure PageControl
     self.pageControl.numberOfPages = self.resultsArray.count;
@@ -91,7 +106,9 @@
     [self.scrollView scrollRectToVisible:currentFrame animated:YES];
     // */
 }
-- (void)viewWillAppear:(BOOL)animated {
+
+- (void)viewWillAppear:(BOOL)animated
+{
     // 1
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = self.currentLoc.latitude;
@@ -184,9 +201,10 @@
     frame.size = self.scrollView.frame.size;
     [self.scrollView scrollRectToVisible:frame animated:YES];
     // */
+    
 }
 
-
+/*
 -(void)shareAction{
     // Prepare activities
     //
@@ -231,18 +249,29 @@
                                       //safariActivity, mapsActivity, printActivity, copyActivity, customActivity]];
     
     
-    NSString *string = [NSString stringWithFormat:@"Check out this HotSpot to meetup! %@\n%@, %@",self.loc.name,self.loc.street1,self.infoView.regionLabel.text];
+    NSString *string = [NSString stringWithFormat:@"Check out this HotSpot to meetup! %@\n%@, %@",self.currentLoc.name,self.currentLoc.street1,self.infoView.regionLabel.text];
     
     // Create OWActivityViewController controller and assign data source
     //
     OWActivityViewController *activityViewController = [[OWActivityViewController alloc] initWithViewController:self activities:activities];
     activityViewController.userInfo = @{
                                         @"text": string,
-                                        @"coordinate": @{@"latitude": @(self.loc.latitude), @"longitude": @(self.loc.longitude)}
+                                        @"coordinate": @{@"latitude": @(self.currentLoc.latitude), @"longitude": @(self.currentLoc.longitude)}
                                         };
     
     [activityViewController presentFromRootViewController];
+}*/
+-(void)shareAction
+{
+    NSString *string = [NSString stringWithFormat:@"Check out this HotSpot to meetup! %@\n%@, %@",self.currentLoc.name,self.currentLoc.street1,self.infoView.regionLabel.text];
+    //NSString *url = @"halfway://";
+    //NSString *string = [NSString stringWithFormat:@"Check out this HotSpot to meetup! %@",url];
+    
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:[NSArray arrayWithObjects:string, nil] applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
+
 @end
 
 
